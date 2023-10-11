@@ -1,6 +1,6 @@
 // Class untuk format objek dari todo
 class Todo {
-    constructor(title, description, status){
+    constructor(title, description, status) {
         this.title = title;
         this.description = description;
         this.status = status;
@@ -33,13 +33,13 @@ tambahTugasButton.addEventListener('click', (event) => {
 // Function untuk mengganti background
 
 // Refresh table
-function refreshTable(){
+function refreshTable() {
     const tableContent = document.getElementById('todolist-content');
     let number = 0;
     tableContent.innerHTML = ""; //clean table
-    
+
     //insert latest todolist to table
-    for(let todo of todolist){
+    for (let todo of todolist) {
         let deleteButton = `<button class="btn-delete">Hapus</button>`;
         let todoRow = `<tr>
                             <th>${number}</th>
@@ -53,3 +53,16 @@ function refreshTable(){
         number++;
     }
 }
+// ubah warna
+
+const btnChangeColor = document.getElementById("btn-ganti");
+
+function changeColor() {
+    const colors = ['#ff5c54', '#2198ff', '#ff983d', '#31be42'];
+    const elementoChange = document.getElementById("form-input");
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    const randomColor = colors[randomIndex];
+    elementoChange.style.backgroundColor = randomColor;
+}
+
+btnChangeColor.addEventListener('click', changeColor);

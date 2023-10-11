@@ -41,7 +41,7 @@ h3 {
 .soal {
     margin-left: 20px;
     width: 50%;
-    height: 325px;
+    height: 370px;
     background-color: #ffffff;
     padding: 20px;
     border: 1px solid #ccc;
@@ -51,7 +51,7 @@ h3 {
 .form-inputan {
     margin-left: 20px;
     width: 40%;
-    height: 325px;
+    height: 370px;
     background-color: #ffffff;
     padding: 20px;
     border: 1px solid #ccc;
@@ -115,4 +115,34 @@ h3 {
     background-color: #ffffff;
     padding: 20px;
     border: 1px solid #ccc;
+}
+
+@keyframes ubahBackground {
+    0% {
+        background-color: #d4df3b;
+    }
+
+    20% {
+        background-color: #31be42;
+    }
+
+    40% {
+        background-color: #ff983d;
+    }
+
+    60% {
+        background-color: #ff4ed6;
+    }
+
+    80% {
+        background-color: #2198ff;
+    }
+
+    100% {
+        background-color: #ff5c54;
+    }
+}
+
+tr:nth-child(even) {
+    animation: ubahBackground 10s infinite;
 }
