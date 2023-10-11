@@ -28,23 +28,28 @@ tambahTugasButton.addEventListener('click', (event) => {
 });
 
 // Function untuk menghapus todo 
-
+function deleteTodo(todoIndex){
+    todolist.splice(todoIndex, 1);
+    refreshTable();
+}
 
 // Function untuk mengganti background
 
 // Refresh table
 function refreshTable(){
-    const tableContent = document.getElementById('todolist-content');
-    let number = 0;
+    // DOM Traversal dari Table -> TBody
+    const table = document.getElementById('data-todolist');
+    const tableContent = table.getElementsByTagName('TBODY')[0];
+    let number = 1;
     tableContent.innerHTML = ""; //clean table
     
     //insert latest todolist to table
     for(let todo of todolist){
-        let deleteButton = `<button class="btn-delete">Hapus</button>`;
+        let deleteButton = `<button onclick="deleteTodo(${number - 1})" class="btn-delete">Hapus</button>`;
         let todoRow = `<tr>
                             <th>${number}</th>
                             <th>${todo.title}</th>
-                            <th>${todo.deskripsi}</th>
+                            <th>${todo.description}</th>
                             <th>${todo.status}</th>
                             <th>${deleteButton}</th>
                             </tr>`;
@@ -53,3 +58,19 @@ function refreshTable(){
         number++;
     }
 }
+
+// Sample todo list
+function sampleData(){
+    const todo1 = new Todo("C# Backend", "Membuat endpoint untuk login", "Progress");
+    const todo2 = new Todo("JavaScript", "Belajar tentang DOM", "Completed");
+    const todo3 = new Todo("C# Web MVC", "Buat Web Pokemon", "Progress");
+    const todo4 = new Todo("Bootstrap", "Belajar dasar-dasar bootstrap", "Completed");
+
+    todolist.push(todo1);
+    todolist.push(todo2);
+    todolist.push(todo3);
+    todolist.push(todo4);
+    refreshTable();
+}
+
+sampleData();
