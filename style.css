@@ -1,0 +1,118 @@
+body {
+    background-color: #f0f0f0;
+    height: 1000px;
+    margin: 100px;
+}
+
+div {
+    display: inline-block;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th,
+td {
+    border: 1px solid;
+    padding: 8px;
+    text-align: left;
+}
+
+td:last-child {
+    text-align: center;
+}
+
+.heading {
+    font-family: sans-serif;
+}
+
+h3 {
+    margin-top: 25px;
+    text-align: center;
+}
+
+
+/* SOAL LAYOUT */
+.soal {
+    margin-left: 20px;
+    width: 50%;
+    height: 325px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+/* FORM LAYOUT */
+.form-inputan {
+    margin-left: 20px;
+    width: 40%;
+    height: 325px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.form-group {
+    display: block;
+}
+
+.tambahTugas {
+    margin-top: 20px;
+    background-color: #3498db;
+    color: white;
+    font-size: 14px;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.tambahTugas:hover {
+    background-color: #0074c2;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* TABEL LAYOUT */
+.btn-delete {
+    background-color: #ff5353;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+.btn-delete:hover {
+    background-color: #ff0000;
+    /* Warna latar belakang berubah saat hover */
+}
+
+.content {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.content-table {
+    width: 100%;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
