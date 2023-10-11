@@ -1,6 +1,6 @@
 // Class untuk format objek dari todo
 class Todo {
-    constructor(title, description, status){
+    constructor(title, description, status) {
         this.title = title;
         this.description = description;
         this.status = status;
@@ -33,17 +33,12 @@ function deleteTodo(todoIndex){
     refreshTable();
 }
 
-// Function untuk mengganti background
-
 // Refresh table
 function refreshTable(){
     // DOM Traversal dari Table -> TBody
     const table = document.getElementById('data-todolist');
     const tableContent = table.getElementsByTagName('TBODY')[0];
     let number = 1;
-    tableContent.innerHTML = ""; //clean table
-    
-    //insert latest todolist to table
     for(let todo of todolist){
         let deleteButton = `<button onclick="deleteTodo(${number - 1})" class="btn-delete">Hapus</button>`;
         let todoRow = `<tr>
@@ -59,6 +54,19 @@ function refreshTable(){
     }
 }
 
+// ubah warna
+const btnChangeColor = document.getElementById("btn-ganti");
+
+function changeColor() {
+    const colors = ['#ff5c54', '#2198ff', '#ff983d', '#31be42'];
+    const elementoChange = document.getElementById("form-input");
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    const randomColor = colors[randomIndex];
+    elementoChange.style.backgroundColor = randomColor;
+}
+
+btnChangeColor.addEventListener('click', changeColor);
+
 // Sample todo list
 function sampleData(){
     const todo1 = new Todo("C# Backend", "Membuat endpoint untuk login", "Progress");
@@ -72,5 +80,4 @@ function sampleData(){
     todolist.push(todo4);
     refreshTable();
 }
-
 sampleData();
